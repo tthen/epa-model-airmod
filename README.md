@@ -45,8 +45,24 @@ that follow:
 
 **METPREP** - for METeorological data PREParation for use in a dispersion Model (Stage 3).
 
+Two types of data are provided for each pathway. The first data lists all of the
+keywords for that pathway, identifies each keyword as to its type (either mandatory or optional,
+either repeatable or non-repeatable, and if it is reprocessed), and provides a brief description of
+the function of the keyword. The second type of data, which may take up more than one page,
+describes each parameter in detail.
 
+The most external data for the JSON file is,
 
+```json
+[
+  JOB: {},
+  UPPERAIR: {},
+  SURFACE: {},
+  ONSITE: {},
+  MERGE: {},
+  METPREP: {},
+]
+```
 
 <!--
 =====================================================================
