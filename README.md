@@ -183,17 +183,30 @@ The most external data for the JSON file is,
     "DATA": {
       "Keyword": "DATA",
       "Type": ["Mandatory", "Non-repeatable", "Reprocessed"],
-      "Description": "File name of raw upper air data"
+      "Description": "File name of raw upper air data",
+      "Parameters": {
+        "archive_filename": "The name of the file containing the archive of upper air data.",
+        "file_format": ["6201FB", "6201VB", "FSL"],
+      },
     },
     "EXTRACT": {
       "Keyword": "EXTRACT",
       "Type": ["Mandatory", "Non-repeatable"],
-      "Description": "File name of extracted upper air data."
+      "Description": "File name of extracted upper air data.",
+      "Parameters": {
+        "extracted_data_filename": "Name of the output file for data extracted from an archive data file and the name of the input file for upper air data QA",
+      },
     },
     "LOCATION": {
       "Keyword": "LOCATION",
       "Type": ["Mandatory", "Non-repeatable", "Reprocessed"],
-      "Description": "Site ID and location information. Required only for extraction processing."
+      "Description": "Site ID and location information. Required only for extraction processing.",
+      "Parameters": {
+        "site_id": "Site identifier for which data are to be processed.",
+        "lat(long)": "Station latitude (or longitude) in decimal degrees with the suffix N for sites north of the equator, S for sites south of the equator (or W for sites west of Greenwich, E for sites east of Greenwich).",
+        "long(lat)": "Station longitude (or latitude) in decimal degrees with the suffix W for sites west of Greenwich, E for sites east of Greenwich (or N for sites north of the equator, S for sites south of the equator).",
+        "[tadjust]": "An integer used to convert the time reported in the database to local Standard time. For standard upper-air data reported in Greenwich Mean Time (GMT), the value is the same as the time zone for the station (e.g., a value of 5 for the Eastern time zone). ",
+      },
     },
     "MODIFY": {
       "Keyword": "MODIFY",
@@ -203,22 +216,40 @@ The most external data for the JSON file is,
     "NO_MISSING": {
       "Keyword": "NO_MISSING",
       "Type": ["Optional", "Repeatable"],
-      "Description": "Identifies those variables to QA and summarize the messages only; detailed message identifying the violation and date is suppressed."
+      "Description": "Identifies those variables to QA and summarize the messages only; detailed message identifying the violation and date is suppressed.",
+      "Parameters": {
+        "uaname1 ... uanameN": "Suppresses missing data messages for the upper air variables specified, as defined in Appendix B; the number of times the variable is missing is not tallied.",
+      },
     },
     "QAOUT": {
       "Keyword": "QAOUT",
       "Type": ["Mandatory", "Non-repeatable"],
-      "Description": "File name of upper air data for quality assessed output/merge input."
+      "Description": "File name of upper air data for quality assessed output/merge input.",
+      "Parameters": {
+        "qa_output_filename": "Name of the output file from the QA/input to merge data.",
+      },
     },
     "RANGE": {
       "Keyword": "RANGE",
       "Type": ["Optional", "Repeatable", "Reprocessed"],
-      "Description": "Set new upper and lower bounds and missing values for QA of the variable listed."
+      "Description": "Set new upper and lower bounds and missing values for QA of the variable listed.",
+      "Parameters": {
+        "uaname": ["UAPR", "UAHT", "UATT", "UATD", "UAWD", "UAWS", "UASS", "UADS", "UALR", "UADD"],
+        "lower_bound": "Minimum value of the valid range of values for uaname",
+        "<[=]": "Exclude (<) or include (<=) the lower and upper bounds (the endpoints) in the QA",
+        "upper_bound": "Maximum value of the valid range of values for uaname",
+        "missing_indicator": "Value to indicate the value is missing",
+      },
     },
     "XDATES": {
       "Keyword": "XDATES",
       "Type": ["Mandatory", "Non-repeatable"],
-      "Description": "Inclusive dates identifying the period of time to extract from the archive data file."
+      "Description": "Inclusive dates identifying the period of time to extract from the archive data file.",
+      "Parameters": {
+        "YB/MB/DB": "Beginning year, month and day to extract; the slash (/) between each part of the date field is required; there can be no blanks in this parameter",
+        "[TO]": "Optional; used to make this record more readable",
+        "YE/ME/DE": "Ending year, month and day to extract; the slash (/) between each part of the date field is required; there can be no blanks in this parameter",
+      },
     },
   },
   "SURFACE": {},
