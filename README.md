@@ -68,14 +68,14 @@ The most external data for the JSON file is,
       "Type": ["Mandatory", "Non-repeatable"],
       "Description": "Identifies the warning/error messages file.",
        "Parameters": {
-       "message_filename": "The name of the file where all source-code-generated messages are written",
+         "message_filename": "The name of the file where all source-code-generated messages are written",
        },
     },
     "REPORT": {
       "Type": ["Optional", "Non-repeatable"],
       "Description": "Identifies the general report file.",
       "Parameters": {
-      "summary_filename": "The name of the file where AERMET writes a summary of all preprocessor activity for the current run",
+        "summary_filename": "The name of the file where AERMET writes a summary of all preprocessor activity for the current run",
       },
     },
   },
