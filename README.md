@@ -178,6 +178,7 @@ The most external data for the JSON file is,
           "Lower Bound": "0",
           "Upper Bound": "2",
         },
+      ],
     },
     "DATA": {
       "Keyword": "DATA",
