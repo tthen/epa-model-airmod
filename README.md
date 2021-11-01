@@ -55,21 +55,30 @@ The most external data for the JSON file is,
 
 ```json
 [
-  JOB: {
+  "JOB": {
     "Keyword": "JOB",
     "Type": ["Optional", "Non-repeatable"],
     "Description": "Start of JOB pathway. This statement is optional if the statements associated with this block appear first in the input control file",
     "CHK_SYNTAX": {
       "Keyword": "CHK_SYNTAX",
       "Type": ["Optional", "Non-repeatable"],
-      "Description": "Flag indicating that only the syntax of the input statements should be checked for errors, i.e., no data are processed."
+      "Description": "Flag indicating that only the syntax of the input statements should be checked for errors, i.e., no data are processed.",
+      "Parameters": [("message_filename", "The name of the file where all source-code-generated messages are written"],
+      },
+    "MESSAGES": {
+      "Type": ["Mandatory", "Non-repeatable"],
+      "Description": "Identifies the warning/error messages file.",
+    },
+    "REPORT": {
+    "Type": ["Optional", "Non-repeatable"],
+      "Description": "Identifies the general report file.",
     },
   },
-  UPPERAIR: {},
-  SURFACE: {},
-  ONSITE: {},
-  MERGE: {},
-  METPREP: {},
+  "UPPERAIR": {},
+  "SURFACE": {},
+  "ONSITE": {},
+  "MERGE": {},
+  "METPREP": {},
 ]
 ```
 
