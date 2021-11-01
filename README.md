@@ -54,7 +54,7 @@ describes each parameter in detail.
 The most external data for the JSON file is,
 
 ```json
-[
+{
   "JOB": {
     "Keyword": "JOB",
     "Type": ["Optional", "Non-repeatable"],
@@ -104,7 +104,7 @@ The most external data for the JSON file is,
           "Type": "<=",
           "Missing Indicator": "99999",
           "Lower Bound": "0",
-          "Upper Bound": ,"5000"
+          "Upper Bound": "5000",
         },
         {
           "Variable Name": "UATT",
@@ -225,7 +225,7 @@ The most external data for the JSON file is,
   "ONSITE": {},
   "MERGE": {},
   "METPREP": {},
-]
+}
 ```
 
 <!--
